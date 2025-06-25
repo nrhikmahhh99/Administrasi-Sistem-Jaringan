@@ -9,7 +9,6 @@
 <div class="card-grid">
     {% for tas in tas_list %}
     <div class="card" style="position: relative;">
-        <!-- Tombol Delete di atas kiri -->
         <a href="/delete/{{ tas.id }}" onclick="return confirm('Yakin ingin menghapus tas ini?')"
            style="position: absolute; top: 10px; left: 10px; background-color: #dc143c; color: white; padding: 5px 10px; border-radius: 6px; font-size: 0.75rem; text-decoration: none;">
            Delete
