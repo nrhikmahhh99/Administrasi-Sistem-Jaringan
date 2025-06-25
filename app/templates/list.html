@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 20px;">
+    <a href="/" class="btn-open" style="padding: 8px 16px; background: #f65868; color: white; text-decoration: none; border-radius: 6px;">🏠 Home</a>
+    <a href="/create" class="btn-open" style="padding: 8px 16px; background: #f65868; color: white; text-decoration: none; border-radius: 6px;">+ Tambah Tas</a>
+</div>
+<h2 style="text-align:center; margin-top: 30px;">Daftar Tas</h2>
+<div class="card-grid">
+    {% for tas in tas_list %}
+    <div class="card" style="position: relative;">
+        <!-- Tombol Delete di atas kiri -->
+        <a href="/delete/{{ tas.id }}" onclick="return confirm('Yakin ingin menghapus tas ini?')"
+           style="position: absolute; top: 10px; left: 10px; background-color: #dc143c; color: white; padding: 5px 10px; border-radius: 6px; font-size: 0.75rem; text-decoration: none;">
+           Delete
+        </a>
+        <img src="{{ tas.gambar_url }}" alt="{{ tas.nama }}">
+        <div class="card-body">
+            <h3>{{ tas.nama }}</h3>
+            <p class="price">Rp {{ tas.harga }},-</p>
+            <p class="desc">{{ tas.deskripsi }}</p>
+            <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                <a href="{{ tas.shopee_link }}" class="btn" target="_blank">Beli di Shopee</a>
+                <a href="/edit/{{ tas.id }}" class="btn" style="background-color: #fb936d;">Edit</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

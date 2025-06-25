@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-container">
+    <a href="/dashboard" class="back-link">&larr; Kembali</a>
+    <h2 class="form-title">Edit Data Tas</h2>
+    <form action="/edit/{{ tas.id }}" method="post" class="form-box">
+        <label>Nama:</label><br>
+        <input type="text" name="nama" value="{{ tas.nama }}"><br>
+        <label>Harga:</label><br>
+        <input type="text" name="harga" value="{{ tas.harga }}"><br>
+        <label>Deskripsi:</label><br>
+        <textarea name="deskripsi">{{ tas.deskripsi }}</textarea><br>
+        <label>Link Gambar:</label><br>
+        <input type="text" name="gambar_url" value="{{ tas.gambar_url }}"><br>
+        <label>Link Shopee:</label><br>
+        <input type="text" name="shopee_link" value="{{ tas.shopee_link }}"><br><br>
+        <button type="submit">Update</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title if title else "Dashboard" }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            text-align: center;
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+        .bottom-bar {
+            background-color: #ddd;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <hr>
+        <p>&copy; 2025 ShopBag App</p>
+    </footer>
+</body>
+</html>

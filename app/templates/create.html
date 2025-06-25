@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-container">
+    <a href="/dashboard" class="back-link">&larr; Kembali</a>
+    <h2 class="form-title">Tambah Data Tas</h2>
+    <form action="/create" method="post" class="form-box">
+        <label>Nama</label>
+        <input type="text" name="nama" required>
+
+        <label>Harga</label>
+        <input type="text" name="harga" required>
+
+        <label>Deskripsi</label>
+        <textarea name="deskripsi" required></textarea>
+
+        <label>Link Gambar</label>
+        <input type="text" name="gambar_url" required>
+
+        <label>Link Shopee</label>
+        <input type="text" name="shopee_link" required>
+
+        <button type="submit" class="btn-submit">Tambah</button>
+    </form>
+</div>
+{% endblock %}
