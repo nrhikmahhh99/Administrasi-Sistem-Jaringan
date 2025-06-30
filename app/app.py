@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import Text
 import os
 from dotenv import load_dotenv
 
@@ -18,7 +19,7 @@ class Tas(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nama = db.Column(db.String(255))
     harga = db.Column(db.String(255))
-    deskripsi = db.Column(db.String(255))
+    deskripsi = db.Column(Text)
     gambar_url = db.Column(db.String(255))
     shopee_link = db.Column(db.String(255))
 
